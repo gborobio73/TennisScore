@@ -20,6 +20,7 @@ namespace TennisScore.WatchAppExtension
             base.Awake(context);
 
             // Configure interface objects here.
+
             //start new thread to update match time every second
             matchTimer = new Timer(1000);
             // Hook up the Elapsed event for the timer. 

@@ -16,10 +16,6 @@ namespace TennisScore.WatchAppExtension
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceButton btnEnd { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel lblDuration { get; set; }
 
         [Outlet]
@@ -40,11 +36,6 @@ namespace TennisScore.WatchAppExtension
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnEnd != null) {
-                btnEnd.Dispose ();
-                btnEnd = null;
-            }
-
             if (lblDuration != null) {
                 lblDuration.Dispose ();
                 lblDuration = null;
