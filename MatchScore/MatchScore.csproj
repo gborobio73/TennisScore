@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDCE3470-AFDE-4AA5-B31C-109B7E7F3805}</ProjectGuid>
+    <ProjectTypeGuids>{FC940695-DFE0-4552-9F25-99AF4A5619A1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MatchScore</RootNamespace>
+    <AssemblyName>MatchScore</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>63834</IOSDebuggerPort>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchLink></MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity></MtouchVerbosity>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.WatchOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MatchScoreFacade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Match.cs" />
+    <Compile Include="UI\IUIScore.cs" />
+    <Compile Include="Scores\Score.cs" />
+    <Compile Include="Scores\InitialScore.cs" />
+    <Compile Include="Scores\NewGame.cs" />
+    <Compile Include="Scores\FifteenLove.cs" />
+    <Compile Include="Scores\FifteenAll.cs" />
+    <Compile Include="Scores\ThirtyLove.cs" />
+    <Compile Include="Scores\LoveFifteen.cs" />
+    <Compile Include="Scores\LoveThirty.cs" />
+    <Compile Include="Scores\FifteenThirty.cs" />
+    <Compile Include="Scores\ThirtyFifteen.cs" />
+    <Compile Include="Scores\ThirtyAll.cs" />
+    <Compile Include="Scores\FifteenForty.cs" />
+    <Compile Include="Scores\ThirtyForty.cs" />
+    <Compile Include="Scores\LoveForty.cs" />
+    <Compile Include="Points\Point.cs" />
+    <Compile Include="Scores\FourtyThirty.cs" />
+    <Compile Include="Scores\FourtyFifteen.cs" />
+    <Compile Include="Scores\FourtyAll.cs" />
+    <Compile Include="Scores\FourtyLove.cs" />
+    <Compile Include="Scores\YourAdvantage.cs" />
+    <Compile Include="Scores\OpponentAdvantage.cs" />
+    <Compile Include="Scores\TiebreakScore.cs" />
+    <Compile Include="Rules\MatchRules.cs" />
+    <Compile Include="UI\IUIMatch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
+    <Folder Include="Scores\" />
+    <Folder Include="Points\" />
+    <Folder Include="Rules\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\WatchOS\Xamarin.WatchOS.CSharp.targets" />
+</Project>
