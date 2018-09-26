@@ -28,15 +28,47 @@ namespace TennisScore.WatchAppExtension
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel lblGames { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel lblMatchDuration { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceLabel lblOppScore { get; set; }
+        WatchKit.WKInterfaceLabel lblSet { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceLabel lblYouScore { get; set; }
+        WatchKit.WKInterfaceLabel oppGames { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel oppPoints { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel oppServe { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel oppSets { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel youGames { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel youPoints { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel youServe { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel youSets { get; set; }
 
         [Action ("OnOpponentPointBtnPress")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -67,19 +99,59 @@ namespace TennisScore.WatchAppExtension
                 btnYouPoint = null;
             }
 
+            if (lblGames != null) {
+                lblGames.Dispose ();
+                lblGames = null;
+            }
+
             if (lblMatchDuration != null) {
                 lblMatchDuration.Dispose ();
                 lblMatchDuration = null;
             }
 
-            if (lblOppScore != null) {
-                lblOppScore.Dispose ();
-                lblOppScore = null;
+            if (lblSet != null) {
+                lblSet.Dispose ();
+                lblSet = null;
             }
 
-            if (lblYouScore != null) {
-                lblYouScore.Dispose ();
-                lblYouScore = null;
+            if (oppGames != null) {
+                oppGames.Dispose ();
+                oppGames = null;
+            }
+
+            if (oppPoints != null) {
+                oppPoints.Dispose ();
+                oppPoints = null;
+            }
+
+            if (oppServe != null) {
+                oppServe.Dispose ();
+                oppServe = null;
+            }
+
+            if (oppSets != null) {
+                oppSets.Dispose ();
+                oppSets = null;
+            }
+
+            if (youGames != null) {
+                youGames.Dispose ();
+                youGames = null;
+            }
+
+            if (youPoints != null) {
+                youPoints.Dispose ();
+                youPoints = null;
+            }
+
+            if (youServe != null) {
+                youServe.Dispose ();
+                youServe = null;
+            }
+
+            if (youSets != null) {
+                youSets.Dispose ();
+                youSets = null;
             }
         }
     }

@@ -84,24 +84,85 @@
                                 </label>
                             </items>
                         </group>
-                        <group width="0.35" alignment="right" id="8102" height="0.1">
+                        <group width="1" alignment="left" id="8620" height="0.42">
                             <items>
-                                <label alignment="left" id="8103" width="1" height="1" text="Opp" textAlignment="center">
+                                <group width="0.35" alignment="right" id="8621" height="1">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="font" type="boldSystem" pointSize="10"/>
-                                    <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </label>
+                                    <items>
+                                        <label alignment="left" id="8622" width="1" height="0.2" text="Opp" textAlignment="center">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="0.65" alignment="left" id="8623" height="1">
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <group width="0.46" alignment="left" id="8626" height="100">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <items>
+                                                <group width="0.25" alignment="right" id="8703" layout="vertical" height="1">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <items>
+                                                        <label alignment="left" text="I" id="9040" width="1" height="0.5" textAlignment="right">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
+                                                        </label>
+                                                        <label alignment="left" text="I" id="9058" width="1" height="0.5" textAlignment="right">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.75" alignment="right" id="8704" height="1" layout="vertical">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <items>
+                                                        <label alignment="left" text="oppPoints" id="8655" width="1" height="0.5" textAlignment="center">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="font" type="system" pointSize="33"/>
+                                                        </label>
+                                                        <label alignment="left" text="youPoints" id="8670" width="1" height="0.5" textAlignment="center">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="font" type="system" pointSize="33"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <group width="0.3" alignment="left" id="9895" height="1" layout="vertical">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <items>
+                                                <label alignment="left" text="Game" id="9934" textAlignment="left" numberOfLines="2" width="1" height="0.4">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" id="9953" textAlignment="center" width="1" height="0.3" verticalAlignment="bottom">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </label>
+                                                <label alignment="left" id="9954" textAlignment="center" width="1" height="0.3" verticalAlignment="bottom">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="0.24" alignment="right" id="12434" height="1" layout="vertical">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <items>
+                                                <label alignment="left" id="12435" textAlignment="center" width="1" height="0.4" text="Sets">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                                </label>
+                                                <label alignment="left" id="12436" textAlignment="center" width="1" height="0.3">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </label>
+                                                <label alignment="left" id="12437" textAlignment="center" width="1" height="0.3">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
                             </items>
-                        </group>
-                        <group width="1" alignment="left" id="1070" height="0.3" layout="vertical">
-                            <items>
-                                <label alignment="left" id="1726" width="1" height="0.5" text="lblOppScore" textAlignment="left">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </label>
-                                <label alignment="left" id="1731" width="1" height="0.5" text="lblYouScore" verticalAlignment="bottom" textAlignment="left">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </label>
-                            </items>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </group>
                         <group width="1" alignment="left" id="1071" height="0.25">
                             <items>
@@ -174,10 +235,18 @@
                     <connections>
                         <outlet property="btnOppPoint" destination="1075" id="name-outlet-1075"/>
                         <outlet property="btnYouPoint" destination="1079" id="name-outlet-1079"/>
-                        <outlet property="lblYouScore" destination="1731" id="name-outlet-1731"/>
-                        <outlet property="lblOppScore" destination="1726" id="name-outlet-1726"/>
                         <outlet property="btnUndoPoint" destination="1851" id="name-outlet-1851"/>
                         <outlet property="lblMatchDuration" destination="2550" id="name-outlet-2550"/>
+                        <outlet property="oppPoints" destination="8655" id="name-outlet-8655"/>
+                        <outlet property="youPoints" destination="8670" id="name-outlet-8670"/>
+                        <outlet property="oppServe" destination="9040" id="name-outlet-9040"/>
+                        <outlet property="youServe" destination="9058" id="name-outlet-9058"/>
+                        <outlet property="oppGames" destination="9953" id="name-outlet-9953"/>
+                        <outlet property="youGames" destination="9954" id="name-outlet-9954"/>
+                        <outlet property="oppSets" destination="12436" id="name-outlet-12436"/>
+                        <outlet property="youSets" destination="12437" id="name-outlet-12437"/>
+                        <outlet property="lblGames" destination="9934" id="name-outlet-9934"/>
+                        <outlet property="lblSet" destination="12435" id="name-outlet-12435"/>
                     </connections>
                 </controller>
             </objects>
@@ -236,6 +305,36 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="256" y="252"/>
+        </scene>
+        <scene sceneID="8596">
+            <objects>
+                <controller id="8597">
+                    <items>
+                        <group width="1" alignment="left" id="8598" height="0.4">
+                            <items>
+                                <group width="0.35" alignment="right" id="8599" height="1">
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <label alignment="left" id="8601" width="1" height="0.2" text="Opp" textAlignment="center">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="0.65" alignment="left" id="8600" height="1">
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <label alignment="left" id="8603" text="oppPoints">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-40" y="265"/>
         </scene>
     </scenes>
     <resources>
