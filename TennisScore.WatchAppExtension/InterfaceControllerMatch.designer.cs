@@ -48,10 +48,6 @@ namespace TennisScore.WatchAppExtension
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceLabel oppServe { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel oppSets { get; set; }
 
         [Outlet]
@@ -61,10 +57,6 @@ namespace TennisScore.WatchAppExtension
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel youPoints { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceLabel youServe { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -124,11 +116,6 @@ namespace TennisScore.WatchAppExtension
                 oppPoints = null;
             }
 
-            if (oppServe != null) {
-                oppServe.Dispose ();
-                oppServe = null;
-            }
-
             if (oppSets != null) {
                 oppSets.Dispose ();
                 oppSets = null;
@@ -142,11 +129,6 @@ namespace TennisScore.WatchAppExtension
             if (youPoints != null) {
                 youPoints.Dispose ();
                 youPoints = null;
-            }
-
-            if (youServe != null) {
-                youServe.Dispose ();
-                youServe = null;
             }
 
             if (youSets != null) {

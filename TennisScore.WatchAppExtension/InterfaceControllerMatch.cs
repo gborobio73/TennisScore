@@ -84,13 +84,14 @@ namespace TennisScore.WatchAppExtension
                 //lblYouScore.SetTextColor(UIKit.UIColor.White);
             }
             if (score.YouServe){
-                youServe.SetTextColor(UIKit.UIColor.Green);
-                oppServe.SetTextColor(UIKit.UIColor.Clear);
+                youPoints.SetTextColor(UIKit.UIColor.Green);
+                oppPoints.SetTextColor(UIKit.UIColor.White);
+
             }
             else 
             {
-                youServe.SetTextColor(UIKit.UIColor.Clear);
-                oppServe.SetTextColor(UIKit.UIColor.Green);
+                youPoints.SetTextColor(UIKit.UIColor.White);
+                oppPoints.SetTextColor(UIKit.UIColor.Green);
             }
 
             oppPoints.SetText(score.OppPoint);
