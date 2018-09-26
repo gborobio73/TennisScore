@@ -100,22 +100,21 @@
                         </group>
                         <group width="1" alignment="left" id="8620" height="0.4">
                             <items>
-                                <group width="0.35" alignment="left" id="8626" height="100">
+                                <group width="0.35" alignment="left" id="12434" height="1" layout="vertical">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <group width="1" alignment="right" id="8704" height="1" layout="vertical">
+                                        <label alignment="left" id="12435" textAlignment="center" width="1" height="0.4" text="Sets">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <items>
-                                                <label alignment="left" text="oppPoints" id="8655" textAlignment="center" width="1" height="0.5">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="30" weight="medium"/>
-                                                </label>
-                                                <label alignment="left" text="youPoints" id="8670" width="1" textAlignment="center" height="0.5">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="30" weight="medium"/>
-                                                </label>
-                                            </items>
-                                        </group>
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                        <label alignment="left" id="12436" textAlignment="center" width="1" height="0.3">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                        </label>
+                                        <label alignment="left" id="12437" textAlignment="center" width="1" height="0.3">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="font" type="system" pointSize="18"/>
+                                        </label>
                                     </items>
                                 </group>
                                 <group width="0.3" alignment="left" id="9895" height="1" layout="vertical">
@@ -135,21 +134,22 @@
                                         </label>
                                     </items>
                                 </group>
-                                <group width="0.35" alignment="right" id="12434" height="1" layout="vertical">
+                                <group width="0.35" alignment="right" id="8626" height="100">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <label alignment="left" id="12435" textAlignment="center" width="1" height="0.4" text="Sets">
+                                        <group width="1" alignment="right" id="8704" height="1" layout="vertical">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="12"/>
-                                        </label>
-                                        <label alignment="left" id="12436" textAlignment="center" width="1" height="0.3">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="18"/>
-                                        </label>
-                                        <label alignment="left" id="12437" textAlignment="center" width="1" height="0.3">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="18"/>
-                                        </label>
+                                            <items>
+                                                <label alignment="left" text="oppPoints" id="8655" textAlignment="center" width="1" height="0.5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="30" weight="medium"/>
+                                                </label>
+                                                <label alignment="left" text="youPoints" id="8670" width="1" textAlignment="center" height="0.5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="30" weight="medium"/>
+                                                </label>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                             </items>
