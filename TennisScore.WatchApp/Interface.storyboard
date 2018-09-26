@@ -98,7 +98,7 @@
                                 </group>
                             </items>
                         </group>
-                        <group width="0.825" alignment="left" id="8620" height="0.4">
+                        <group width="1" alignment="left" id="8620" height="0.4">
                             <items>
                                 <group width="0.35" alignment="left" id="8626" height="100">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,35 +118,35 @@
                                         </group>
                                     </items>
                                 </group>
-                                <group width="0.37" alignment="left" id="9895" height="1" layout="vertical">
+                                <group width="0.3" alignment="left" id="9895" height="1" layout="vertical">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <label alignment="left" text="Games" id="9934" textAlignment="right" width="1" height="0.4">
+                                        <label alignment="left" text="Games" id="9934" textAlignment="center" width="1" height="0.4">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="system" pointSize="12"/>
                                         </label>
-                                        <label alignment="left" id="9953" textAlignment="right" width="1" height="0.3" verticalAlignment="bottom">
+                                        <label alignment="left" id="9953" textAlignment="center" width="1" height="0.3" verticalAlignment="bottom">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="system" pointSize="18"/>
                                         </label>
-                                        <label alignment="left" id="9954" textAlignment="right" width="1" height="0.3" verticalAlignment="bottom">
+                                        <label alignment="left" id="9954" textAlignment="center" width="1" height="0.3" verticalAlignment="bottom">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="system" pointSize="18"/>
                                         </label>
                                     </items>
                                 </group>
-                                <group width="0.27" alignment="right" id="12434" height="1" layout="vertical">
+                                <group width="0.35" alignment="right" id="12434" height="1" layout="vertical">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <label alignment="left" id="12435" textAlignment="right" width="1" height="0.4" text="Sets">
+                                        <label alignment="left" id="12435" textAlignment="center" width="1" height="0.4" text="Sets">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="system" pointSize="12"/>
                                         </label>
-                                        <label alignment="left" id="12436" textAlignment="right" width="1" height="0.3">
+                                        <label alignment="left" id="12436" textAlignment="center" width="1" height="0.3">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="system" pointSize="18"/>
                                         </label>
-                                        <label alignment="left" id="12437" textAlignment="right" width="1" height="0.3">
+                                        <label alignment="left" id="12437" textAlignment="center" width="1" height="0.3">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="system" pointSize="18"/>
                                         </label>
