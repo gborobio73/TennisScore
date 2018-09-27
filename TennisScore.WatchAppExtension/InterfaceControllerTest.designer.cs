@@ -11,19 +11,11 @@ using WatchKit;
 
 namespace TennisScore.WatchAppExtension
 {
-    [Register ("InnterfaceControllerStatistics")]
-    partial class InnterfaceControllerStatistics
+    [Register ("InterfaceControllerTest")]
+    partial class InterfaceControllerTest
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceLabel lblDuration { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (lblDuration != null) {
-                lblDuration.Dispose ();
-                lblDuration = null;
-            }
         }
     }
 }

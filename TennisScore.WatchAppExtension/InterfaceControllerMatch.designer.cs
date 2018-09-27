@@ -32,7 +32,11 @@ namespace TennisScore.WatchAppExtension
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceLabel lblMatchDuration { get; set; }
+        WatchKit.WKInterfaceLabel lblMatchHour { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel lblMatchMin { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -96,9 +100,14 @@ namespace TennisScore.WatchAppExtension
                 lblGames = null;
             }
 
-            if (lblMatchDuration != null) {
-                lblMatchDuration.Dispose ();
-                lblMatchDuration = null;
+            if (lblMatchHour != null) {
+                lblMatchHour.Dispose ();
+                lblMatchHour = null;
+            }
+
+            if (lblMatchMin != null) {
+                lblMatchMin.Dispose ();
+                lblMatchMin = null;
             }
 
             if (lblSet != null) {

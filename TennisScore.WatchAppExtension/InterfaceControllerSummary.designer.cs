@@ -11,9 +11,13 @@ using WatchKit;
 
 namespace TennisScore.WatchAppExtension
 {
-    [Register ("InterfaceControllerStatistics")]
-    partial class InterfaceControllerStatistics
+    [Register ("InterfaceControllerSummary")]
+    partial class InterfaceControllerSummary
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceButton btnEndMatch { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel lblDuration { get; set; }
@@ -30,12 +34,17 @@ namespace TennisScore.WatchAppExtension
         [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel lblYouPoints { get; set; }
 
-        [Action ("OnEndBtnPress")]
+        [Action ("OnEndMAtchBtnPress")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void OnEndBtnPress ();
+        partial void OnEndMAtchBtnPress ();
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnEndMatch != null) {
+                btnEndMatch.Dispose ();
+                btnEndMatch = null;
+            }
+
             if (lblDuration != null) {
                 lblDuration.Dispose ();
                 lblDuration = null;

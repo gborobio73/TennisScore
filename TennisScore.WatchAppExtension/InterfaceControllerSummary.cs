@@ -1,17 +1,17 @@
 using Foundation;
 using MatchScore;
-using MatchScore.UI;
 using System;
 using System.Linq;
+using UIKit;
 using WatchKit;
 
 namespace TennisScore.WatchAppExtension
 {
-    public partial class InterfaceControllerStatistics : WKInterfaceController
+    public partial class InterfaceControllerSummary : WKInterfaceController
     {
         MatchScoreFacade facade = new MatchScoreFacade();
 
-        public InterfaceControllerStatistics(IntPtr handle) : base(handle)
+        public InterfaceControllerSummary (IntPtr handle) : base (handle)
         {
         }
 
@@ -20,19 +20,22 @@ namespace TennisScore.WatchAppExtension
             base.Awake(context);
 
             // Configure interface objects here.
+            var match = facade.GetMatch();
+            lblDuration.SetText(match.Duration);
+            lblTotalPoints.SetText($"{match.Scores.Count.ToString()} points");
+            lblOppPoints.SetText($"{match.Scores.Count((s) => !s.YouWonThePoint).ToString()} points");
+            lblYouPoints.SetText($"{match.Scores.Count((s) => s.YouWonThePoint).ToString()} points");
 
-
+            //statsTable.SetNumberOfRows(10, "default");
+            //b0fc17 -> green button
+            //btnEndMatch.SetBackgroundColor(new UIColor(red: 0.69f, green: 0.99f, blue: 0.09f, alpha: 1.0f));
             Console.WriteLine("{0} awake with context", this);
         }
 
         public override void WillActivate()
         {
             // This method is called when the watch view controller is about to be visible to the user.
-            var match = facade.GetMatch();
-            lblDuration.SetText($"Duration: {match.Duration}");
-            lblTotalPoints.SetText($"Total points: {match.Scores.Count.ToString()}");
-            lblOppPoints.SetText($"Opp points: {match.Scores.Count((s) => !s.YouWonThePoint).ToString()}");
-            lblYouPoints.SetText($"You points: {match.Scores.Count((s) => s.YouWonThePoint).ToString()}");
+
             Console.WriteLine("{0} will activate", this);
         }
 
@@ -42,7 +45,7 @@ namespace TennisScore.WatchAppExtension
             Console.WriteLine("{0} did deactivate", this);
         }
 
-        partial void OnEndBtnPress()
+        partial void OnEndMAtchBtnPress()
         {
             facade.EndMatch();
             PopToRootController();

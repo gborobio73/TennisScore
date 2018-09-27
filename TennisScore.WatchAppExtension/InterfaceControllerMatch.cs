@@ -21,7 +21,9 @@ namespace TennisScore.WatchAppExtension
 
             // Configure interface objects here.
             RenderMatchTime();
-            
+            lblSet.SetText($"S{Environment.NewLine}E{Environment.NewLine}T{Environment.NewLine}S");
+            lblGames.SetText($"G{Environment.NewLine}A{Environment.NewLine}M{Environment.NewLine}E{Environment.NewLine}S");
+
             //lblGames.SetText("gam"+Environment.NewLine+"es");
             //start new thread to update match time every second
             matchTimer = new Timer(1000);
@@ -111,7 +113,9 @@ namespace TennisScore.WatchAppExtension
         }
 
         void RenderMatchTime(){
-            lblMatchDuration.SetText(match.ElapsedTime());
+            lblMatchHour.SetText(match.ElapsedTime().Substring(0,2));
+            lblMatchMin.SetText(match.ElapsedTime().Substring(3));
+
         }
     }
 }

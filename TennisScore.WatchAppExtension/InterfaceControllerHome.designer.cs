@@ -19,7 +19,7 @@ namespace TennisScore.WatchAppExtension
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceButton btnStats { get; set; }
+        WatchKit.WKInterfaceButton btnSummary { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -44,9 +44,9 @@ namespace TennisScore.WatchAppExtension
                 btnStart = null;
             }
 
-            if (btnStats != null) {
-                btnStats.Dispose ();
-                btnStats = null;
+            if (btnSummary != null) {
+                btnSummary.Dispose ();
+                btnSummary = null;
             }
 
             if (swBestOfThree != null) {

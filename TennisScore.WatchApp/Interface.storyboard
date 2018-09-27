@@ -29,15 +29,15 @@
                                 <segue id="233" destination="87" kind="push"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Stats" id="292" height="0.25">
+                        <button width="1" alignment="left" title="Summary" id="292" height="0.25">
                             <connections>
-                                <segue id="3592" destination="3394" kind="push"/>
+                                <segue id="23921" destination="8597" kind="push"/>
                             </connections>
                         </button>
                     </items>
                     <connections>
                         <outlet property="btnStart" destination="84" id="name-outlet-84"/>
-                        <outlet property="btnStats" destination="292" id="name-outlet-292"/>
+                        <outlet property="btnSummary" destination="292" id="name-outlet-292"/>
                         <outlet property="swBestOfThree" destination="5071" id="name-outlet-5071"/>
                         <outlet property="swYouServe" destination="5199" id="name-outlet-5199"/>
                     </connections>
@@ -56,10 +56,15 @@
                                 <group width="0.65" alignment="left" id="17359" height="1" layout="vertical">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <label alignment="left" text="lblMatchDuration" id="2550" width="1" height="0.7">
+                                        <label alignment="left" text="lblMatchDuration" id="2550" width="0.4" height="0.7" textAlignment="left">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="textColor" colorSpace="calibratedRGB" red="0.13725490196078433" green="0.396078431372549" blue="0.996078431372549" alpha="1"/>
-                                            <fontDescription key="font" type="system" pointSize="20"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.996078431372549" green="0.984313725490196" blue="0" alpha="1"/>
+                                            <fontDescription key="font" type="system" pointSize="24"/>
+                                        </label>
+                                        <label alignment="left" text="lblMatchDuration" id="27469" width="0.4" height="0.3" textAlignment="left">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.996078431372549" green="0.984313725490196" blue="0" alpha="1"/>
+                                            <fontDescription key="font" type="system" pointSize="12"/>
                                         </label>
                                     </items>
                                 </group>
@@ -100,38 +105,48 @@
                         </group>
                         <group width="1" alignment="left" id="8620" height="0.4">
                             <items>
-                                <group width="0.35" alignment="left" id="12434" height="1" layout="vertical">
+                                <group width="0.35" alignment="left" id="12434" height="1">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <label alignment="left" id="12435" textAlignment="center" width="1" height="0.4" text="Sets">
+                                        <label alignment="right" id="12435" textAlignment="left" width="0.5" height="1" text="SETS" numberOfLines="4">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                            <fontDescription key="font" type="system" pointSize="10"/>
                                         </label>
-                                        <label alignment="left" id="12436" textAlignment="center" width="1" height="0.3">
+                                        <group width="0.5" alignment="left" id="27975" height="1" layout="vertical">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="18"/>
-                                        </label>
-                                        <label alignment="left" id="12437" textAlignment="center" width="1" height="0.3">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="18"/>
-                                        </label>
+                                            <items>
+                                                <label alignment="left" id="12436" textAlignment="center" width="1" height="0.5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                </label>
+                                                <label alignment="left" id="12437" textAlignment="center" width="1" height="0.5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                </label>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
-                                <group width="0.3" alignment="left" id="9895" height="1" layout="vertical">
+                                <group width="0.3" alignment="left" id="9895" height="1">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <label alignment="left" text="Games" id="9934" textAlignment="center" width="1" height="0.4">
+                                        <label alignment="right" text="Games" id="9934" textAlignment="left" width="0.5" height="1" numberOfLines="6">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                            <fontDescription key="font" type="system" pointSize="8"/>
                                         </label>
-                                        <label alignment="left" id="9953" textAlignment="center" width="1" height="0.3" verticalAlignment="bottom">
+                                        <group width="0.5" alignment="left" id="28640" layout="vertical" height="1">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="18"/>
-                                        </label>
-                                        <label alignment="left" id="9954" textAlignment="center" width="1" height="0.3" verticalAlignment="bottom">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="18"/>
-                                        </label>
+                                            <items>
+                                                <label alignment="left" id="9953" textAlignment="center" width="1" height="0.5" verticalAlignment="bottom">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                </label>
+                                                <label alignment="left" id="9954" textAlignment="center" width="1" height="0.5" verticalAlignment="bottom">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                </label>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                                 <group width="0.35" alignment="right" id="8626" height="100">
@@ -229,109 +244,110 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="lblMatchDuration" destination="2550" id="name-outlet-2550"/>
+                        <outlet property="lblMatchHour" destination="2550" id="name-outlet-2550"/>
                         <outlet property="btnOppPoint" destination="1075" id="name-outlet-1075"/>
                         <outlet property="btnYouPoint" destination="1079" id="name-outlet-1079"/>
                         <outlet property="btnUndoPoint" destination="1851" id="name-outlet-1851"/>
                         <outlet property="youPoints" destination="8670" id="name-outlet-8670"/>
                         <outlet property="oppPoints" destination="8655" id="name-outlet-8655"/>
-                        <outlet property="oppGames" destination="9953" id="name-outlet-9953"/>
-                        <outlet property="youGames" destination="9954" id="name-outlet-9954"/>
                         <outlet property="lblGames" destination="9934" id="name-outlet-9934"/>
+                        <outlet property="lblSet" destination="12435" id="name-outlet-12435"/>
+                        <outlet property="lblMatchMin" destination="27469" id="name-outlet-27469"/>
                         <outlet property="oppSets" destination="12436" id="name-outlet-12436"/>
                         <outlet property="youSets" destination="12437" id="name-outlet-12437"/>
-                        <outlet property="lblSet" destination="12435" id="name-outlet-12435"/>
+                        <outlet property="oppGames" destination="9953" id="name-outlet-9953"/>
+                        <outlet property="youGames" destination="9954" id="name-outlet-9954"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="255" y="-2"/>
         </scene>
-        <scene sceneID="3393">
+        <scene sceneID="8596">
             <objects>
-                <controller id="3394" customClass="InterfaceControllerStatistics" title="Statistics">
+                <controller id="8597" title="Summary" customClass="InterfaceControllerSummary" identifier="InterfaceControllerSummary">
                     <items>
-                        <group width="1" alignment="left" id="3395" height="1" layout="vertical">
-                            <items>
-                                <label alignment="left" text="lblDuration" id="3405" width="1" height="0.125" textAlignment="center">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </label>
-                                <label alignment="left" text="lblTotalPoints" id="3856" textAlignment="center" width="1" height="0.125">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </label>
-                                <label alignment="left" text="lblOppPoints" id="4347" width="1" height="0.125" textAlignment="center">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </label>
-                                <label alignment="left" text="lblYouPoints" id="4362" width="1" height="0.125" textAlignment="center">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </label>
-                                <button width="1" alignment="center" id="6049" verticalAlignment="bottom" height="0.25">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <group key="contentGroup" width="1" alignment="left" id="6070" height="1">
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <items>
-                                            <group width="1" alignment="left" id="6071" height="1" radius="35">
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                <items>
-                                                    <imageView alignment="left" id="5615" width="41" height="23" contentMode="scaleAspectFit" verticalAlignment="center" image="floppy.png">
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
-                                                    <label alignment="left" text="End Match" id="5616" verticalAlignment="center" width="0.75" height="1">
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </label>
-                                                </items>
-                                            </group>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <action selector="OnEndBtnPress" destination="3394" id="6232"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
+                        <label alignment="left" id="24417" width="1" textAlignment="left" text="TOTAL TIME" height="12">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                        </label>
+                        <label alignment="left" text="lblDuration" id="24418" width="1" textAlignment="left" height="22">
+                            <fontDescription key="font" type="system" pointSize="22"/>
+                            <color key="textColor" colorSpace="calibratedRGB" red="0.996078431372549" green="0.984313725490196" blue="0" alpha="1"/>
+                        </label>
+                        <separator alignment="center" id="24597" width="1">
+                            <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
+                        </separator>
+                        <label alignment="left" id="24419" width="1" height="12" textAlignment="left" text="YOU PLAYED">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                        </label>
+                        <label alignment="left" text="lblTotalPoints" id="24420" width="1" height="22" textAlignment="left">
+                            <fontDescription key="font" type="system" pointSize="22"/>
+                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0.14901960784313725" blue="0" alpha="1"/>
+                        </label>
+                        <separator alignment="center" id="26842" width="134" height="1.5">
+                            <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
+                        </separator>
+                        <label alignment="left" text="YOU WON" id="24843" width="1" height="12" textAlignment="left">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                        </label>
+                        <label alignment="left" text="lblYouPoints" id="24844" width="1" height="19.5" textAlignment="left">
+                            <fontDescription key="font" type="system" pointSize="22"/>
+                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0.14901960784313725" blue="0" alpha="1"/>
+                        </label>
+                        <separator alignment="center" id="26278" width="134" height="1.5">
+                            <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
+                        </separator>
+                        <label alignment="left" id="24815" width="1" height="12" textAlignment="left" text="OPPONENT WON">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                        </label>
+                        <label alignment="left" text="lblOppPoints" id="24816" width="1" height="19.5" textAlignment="left">
+                            <fontDescription key="font" type="system" pointSize="22"/>
+                            <color key="textColor" colorSpace="calibratedRGB" red="1" green="0.14901960784313725" blue="0" alpha="1"/>
+                        </label>
+                        <separator alignment="center" id="26843" width="134" height="1.5">
+                            <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
+                        </separator>
+                        <button width="1" alignment="center" title="End Match" id="24870">
+                            <connections>
+                                <action selector="OnEndMAtchBtnPress" destination="8597" id="24924"/>
+                            </connections>
+                            <color key="backgroundColor" colorSpace="calibratedRGB" red="0.69019607843137254" green="0.9882352941176471" blue="0.090196078431372548" alpha="1"/>
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </button>
                     </items>
                     <connections>
-                        <outlet property="lblDuration" destination="3405" id="name-outlet-3405"/>
-                        <outlet property="lblTotalPoints" destination="3856" id="name-outlet-3856"/>
-                        <outlet property="lblOppPoints" destination="4347" id="name-outlet-4347"/>
-                        <outlet property="lblYouPoints" destination="4362" id="name-outlet-4362"/>
+                        <outlet property="lblDuration" destination="24418" id="name-outlet-24418"/>
+                        <outlet property="lblOppPoints" destination="24816" id="name-outlet-24816"/>
+                        <outlet property="lblYouPoints" destination="24844" id="name-outlet-24844"/>
+                        <outlet property="btnEndMatch" destination="24870" id="name-outlet-24870"/>
+                        <outlet property="lblTotalPoints" destination="24420" id="name-outlet-24420"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="256" y="252"/>
+            <point key="canvasLocation" x="257" y="265"/>
         </scene>
-        <scene sceneID="8596">
+        <scene sceneID="24393">
             <objects>
-                <controller id="8597">
+                <controller id="24394" customClass="InterfaceControllerTest">
                     <items>
-                        <group width="1" alignment="left" id="8598" height="0.4">
+                        <table alignment="left" id="23774" width="1">
                             <items>
-                                <group width="0.35" alignment="right" id="8599" height="1">
+                                <tableRow id="23775" customClass="RowController">
+                                    <group key="rootItem" width="1" alignment="left" id="23776">
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </group>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <items>
-                                        <label alignment="left" id="8601" width="1" height="0.2" text="Opp" textAlignment="center">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="font" type="boldSystem" pointSize="10"/>
-                                        </label>
-                                    </items>
-                                </group>
-                                <group width="0.65" alignment="left" id="8600" height="1">
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <items>
-                                        <label alignment="left" id="8603" text="oppPoints">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </label>
-                                    </items>
-                                </group>
+                                </tableRow>
                             </items>
-                        </group>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </table>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-40" y="265"/>
+            <point key="canvasLocation" x="-266" y="307"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="floppy.png" width="512" height="512"/>
-    </resources>
 </document>

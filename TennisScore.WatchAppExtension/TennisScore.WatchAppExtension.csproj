@@ -109,15 +109,19 @@
       <DependentUpon>InterfaceControllerMatch.cs</DependentUpon>
     </Compile>
     <Compile Include="SharedStorage.cs" />
-    <Compile Include="InnterfaceControllerStatistics.cs" />
-    <Compile Include="InnterfaceControllerStatistics.designer.cs">
-      <DependentUpon>InnterfaceControllerStatistics.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InterfaceControllerStatistics.cs" />
-    <Compile Include="InterfaceControllerStatistics.designer.cs">
-      <DependentUpon>InterfaceControllerStatistics.cs</DependentUpon>
-    </Compile>
     <Compile Include="Configuration.cs" />
+    <Compile Include="RowController.cs" />
+    <Compile Include="RowController.designer.cs">
+      <DependentUpon>RowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceControllerTest.cs" />
+    <Compile Include="InterfaceControllerTest.designer.cs">
+      <DependentUpon>InterfaceControllerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceControllerSummary.cs" />
+    <Compile Include="InterfaceControllerSummary.designer.cs">
+      <DependentUpon>InterfaceControllerSummary.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="PushNotificationPayload.json" />
