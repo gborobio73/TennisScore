@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="MatchScoreFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Match.cs" />
     <Compile Include="UI\IUIScore.cs" />
     <Compile Include="Scores\Score.cs" />
     <Compile Include="Scores\InitialScore.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Scores\TiebreakScore.cs" />
     <Compile Include="Rules\MatchRules.cs" />
     <Compile Include="UI\IUIMatch.cs" />
+    <Compile Include="Scores\Match.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />

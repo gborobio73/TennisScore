@@ -17,6 +17,8 @@ namespace MatchScore.Scores
             YouSets = previous.YouSets;
             YouServe = previous.YouServe;
             YouWonThePoint = youWon;
+            IsDoubles = previous.IsDoubles;
+            IsBestOfFive = previous.IsBestOfFive;
             ElapsedPointTime = stopwatch.Elapsed;
             this.stopwatch = stopwatch;
         }
@@ -35,13 +37,17 @@ namespace MatchScore.Scores
 
         public abstract Point YouPoint { get; }
 
-        public bool YouWonThePoint { get; private set;}
+        public bool YouWonThePoint { get; private set; }
+
+        public bool IsDoubles { get; private set; }
+
+        public bool IsBestOfFive { get; private set;}
 
         public TimeSpan ElapsedPointTime { get; private set; }
 
         public bool IsEndOfMatch()
         {
-            return new MatchRules().IsEndOfMatch(OppSets, YouSets);
+            return new MatchRules().IsEndOfMatch(OppSets, YouSets, IsBestOfFive);
         }
 
         public abstract IScore SetOppPoint();
@@ -70,6 +76,10 @@ namespace MatchScore.Scores
         IScore SetYouPoint();
 
         bool IsEndOfMatch();
+
+        bool IsDoubles { get; }
+
+        bool IsBestOfFive { get; }
 
         bool YouWonThePoint { get; }
 

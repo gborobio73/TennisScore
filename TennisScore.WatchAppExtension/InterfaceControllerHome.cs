@@ -2,7 +2,6 @@
 
 using WatchKit;
 using Foundation;
-using MatchScore;
 
 namespace TennisScore.WatchAppExtension
 {
@@ -34,14 +33,19 @@ namespace TennisScore.WatchAppExtension
             Console.WriteLine("{0} did deactivate", this);
         }
 
-        partial void OnBestOfThreeSWPressed(bool sender)
-        {
-            Configuration.Instance.BestOfThree = sender;
-        }
-
         partial void OnYouServeSwPressed(bool sender)
         {
             Configuration.Instance.YouServe = sender;
+        }
+
+        partial void OnDoublesSWPressed(bool sender)
+        {
+            Configuration.Instance.Doubles = sender;
+        }
+
+        partial void OnBestOfFiveSWPressed(bool sender)
+        {
+            Configuration.Instance.BestOfFive = sender;
         }
     }
 }

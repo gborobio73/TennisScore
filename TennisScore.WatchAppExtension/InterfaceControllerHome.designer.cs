@@ -23,15 +23,23 @@ namespace TennisScore.WatchAppExtension
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        WatchKit.WKInterfaceSwitch swBestOfThree { get; set; }
+        WatchKit.WKInterfaceSwitch swBestOfFive { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceSwitch swDoubles { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceSwitch swYouServe { get; set; }
 
-        [Action ("OnBestOfThreeSWPressed:")]
+        [Action ("OnBestOfFiveSWPressed:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void OnBestOfThreeSWPressed (System.Boolean sender);
+        partial void OnBestOfFiveSWPressed (System.Boolean sender);
+
+        [Action ("OnDoublesSWPressed:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OnDoublesSWPressed (System.Boolean sender);
 
         [Action ("OnYouServeSwPressed:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -49,9 +57,14 @@ namespace TennisScore.WatchAppExtension
                 btnSummary = null;
             }
 
-            if (swBestOfThree != null) {
-                swBestOfThree.Dispose ();
-                swBestOfThree = null;
+            if (swBestOfFive != null) {
+                swBestOfFive.Dispose ();
+                swBestOfFive = null;
+            }
+
+            if (swDoubles != null) {
+                swDoubles.Dispose ();
+                swDoubles = null;
             }
 
             if (swYouServe != null) {

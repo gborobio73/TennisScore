@@ -16,11 +16,15 @@ namespace MatchScore.Scores
 
         public override IScore SetOppPoint()
         {
+            if (IsDoubles)
+                return new NewGame(this, false, stopwatch);
             return new OpponentAdvantage(this, false, stopwatch);
         }
 
         public override IScore SetYouPoint()
         {
+            if (IsDoubles)
+                return new NewGame(this, true, stopwatch);
             return new YourAdvantage(this, true, stopwatch);
         }
     }

@@ -8,10 +8,12 @@ namespace MatchScore.Scores
     {
         readonly Stopwatch stopwatch;
 
-        internal InitialScore(bool youServe, Stopwatch stopwatch)
+        internal InitialScore(bool isDoubles, bool isBestOfFive, bool youServe, Stopwatch stopwatch)
         {
             YouServe = youServe;
+            IsDoubles = isDoubles;
             ElapsedPointTime = stopwatch.Elapsed;
+            IsBestOfFive = isBestOfFive;
             this.stopwatch = stopwatch;
         }
 
@@ -31,7 +33,11 @@ namespace MatchScore.Scores
 
         public bool YouWonThePoint => false;
 
-        public TimeSpan ElapsedPointTime { get; private set; }
+        public bool IsDoubles { get; private set; }
+
+        public bool IsBestOfFive { get; private set; }
+
+    public TimeSpan ElapsedPointTime { get; private set; }
 
         public bool IsEndOfMatch()
         {

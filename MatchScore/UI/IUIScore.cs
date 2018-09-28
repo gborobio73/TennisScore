@@ -13,6 +13,8 @@ namespace MatchScore.UI
         bool YouServe { get; }
         bool IsEndOfMatch { get; }
         bool YouWonThePoint { get; }
+        bool IsDoubles { get; }
+        bool IsBestOfFive { get; }
 
     }
 
@@ -29,6 +31,8 @@ namespace MatchScore.UI
             IsEndOfMatch = score.IsEndOfMatch();
             YouServe = score.YouServe;
             YouWonThePoint = score.YouWonThePoint;
+            IsDoubles = score.IsDoubles;
+            IsBestOfFive = score.IsBestOfFive;
         }
 
         public string OppPoint { get; private set; }
@@ -48,5 +52,9 @@ namespace MatchScore.UI
         public bool YouServe { get; private set; }
 
         public bool YouWonThePoint { get; private set; }
+
+        public bool IsDoubles { get; private set; }
+
+        public bool IsBestOfFive { get; private set; }
     }
 }

@@ -23,6 +23,10 @@ namespace TennisScore.WatchAppExtension
             RenderMatchTime();
             lblSet.SetText($"S{Environment.NewLine}E{Environment.NewLine}T{Environment.NewLine}S");
             lblGames.SetText($"G{Environment.NewLine}A{Environment.NewLine}M{Environment.NewLine}E{Environment.NewLine}S");
+            var doublesText = Configuration.Instance.Doubles ? "DOUBLES" : "SINGLES";
+            lblDoubles.SetText(doublesText);
+            var bestOf = Configuration.Instance.BestOfFive ? "BEST OF 5" : "BEST OF 3";
+            lblBestOf.SetText(bestOf);
 
             //lblGames.SetText("gam"+Environment.NewLine+"es");
             //start new thread to update match time every second
@@ -32,6 +36,13 @@ namespace TennisScore.WatchAppExtension
             matchTimer.AutoReset = true;
             matchTimer.Enabled = true;
 
+            if (!match.OnGoing())
+            {
+                match.StartMatch(Configuration.Instance.Doubles,
+                                 Configuration.Instance.BestOfFive,
+                                 Configuration.Instance.YouServe);
+            }
+
             Console.WriteLine("{0} awake with context", this);
         }
 
@@ -40,11 +51,7 @@ namespace TennisScore.WatchAppExtension
             // This method is called when the watch view controller is about to be visible to the user.
             Console.WriteLine("{0} will activate", this);
 
-            if (!match.OnGoing())
-            {
-                match.StartMatch(Configuration.Instance.YouServe);
-            } 
-            RenderUI();
+            RenderScore();
         }
 
         public override void DidDeactivate()
@@ -56,23 +63,23 @@ namespace TennisScore.WatchAppExtension
         partial void OnUndoBtnPress()
         {
             match.UndoLasPoint();
-            RenderUI();
+            RenderScore();
         }
 
         partial void OnOpponentPointBtnPress()
         {
             match.SetOppPoint();
-            RenderUI();
+            RenderScore();
         }
 
         partial void OnYouPointBtnPress()
         {
             match.SetYouPoint();
-            RenderUI();
+            RenderScore();
 
         }
 
-        void RenderUI()
+        void RenderScore()
         {
             var score = match.GetScore();
             if (score.IsEndOfMatch)

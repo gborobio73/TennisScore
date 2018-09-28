@@ -14,14 +14,19 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceControllerHome" title="Home">
                     <items>
-                        <switch width="1" alignment="left" value="YES" title="You serve" id="5199">
+                        <switch width="1" alignment="left" title="Doubles" id="32337">
                             <connections>
-                                <action selector="OnYouServeSwPressed:" destination="AgC-eL-Hgc" id="5367"/>
+                                <action selector="OnDoublesSWPressed:" destination="AgC-eL-Hgc" id="32428"/>
                             </connections>
                         </switch>
-                        <switch width="1" alignment="left" value="YES" title="Best of 3" id="5071" height="0.25">
+                        <switch width="1" alignment="left" title="Best of 5" id="5071" height="0.25">
                             <connections>
-                                <action selector="OnBestOfThreeSWPressed:" destination="AgC-eL-Hgc" id="5292"/>
+                                <action selector="OnBestOfFiveSWPressed:" destination="AgC-eL-Hgc" id="33937"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="You serve" id="5199">
+                            <connections>
+                                <action selector="OnYouServeSwPressed:" destination="AgC-eL-Hgc" id="5367"/>
                             </connections>
                         </switch>
                         <button width="1" alignment="left" title="Start" id="84" height="0.25">
@@ -38,8 +43,9 @@
                     <connections>
                         <outlet property="btnStart" destination="84" id="name-outlet-84"/>
                         <outlet property="btnSummary" destination="292" id="name-outlet-292"/>
-                        <outlet property="swBestOfThree" destination="5071" id="name-outlet-5071"/>
+                        <outlet property="swBestOfFive" destination="5071" id="name-outlet-5071"/>
                         <outlet property="swYouServe" destination="5199" id="name-outlet-5199"/>
+                        <outlet property="swDoubles" destination="32337" id="name-outlet-32337"/>
                     </connections>
                 </controller>
             </objects>
@@ -53,18 +59,31 @@
                     <items>
                         <group width="1" alignment="left" id="1069" height="0.3">
                             <items>
-                                <group width="0.65" alignment="left" id="17359" height="1" layout="vertical">
+                                <group width="0.35" alignment="left" id="17359" height="1" layout="vertical">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <items>
-                                        <label alignment="left" text="lblMatchDuration" id="2550" width="0.4" height="0.7" textAlignment="left">
+                                        <label alignment="left" text="lblMatchDuration" id="2550" width="1" height="0.7" textAlignment="left">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="textColor" colorSpace="calibratedRGB" red="0.996078431372549" green="0.984313725490196" blue="0" alpha="1"/>
                                             <fontDescription key="font" type="system" pointSize="24"/>
                                         </label>
-                                        <label alignment="left" text="lblMatchDuration" id="27469" width="0.4" height="0.3" textAlignment="left">
+                                        <label alignment="left" text="lblMatchDuration" id="27469" width="1" height="0.3" textAlignment="left">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="textColor" colorSpace="calibratedRGB" red="0.996078431372549" green="0.984313725490196" blue="0" alpha="1"/>
                                             <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="0.3" alignment="left" id="32183" height="1" layout="vertical">
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <label alignment="left" text="Label" id="33129" textAlignment="left" width="1" height="0.4" minimumScaleFactor="0">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                        <label alignment="left" text="Label" id="33130" numberOfLines="2" minimumScaleFactor="0">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="font" type="system" pointSize="10"/>
                                         </label>
                                     </items>
                                 </group>
@@ -95,7 +114,7 @@
                                                 </items>
                                             </group>
                                         </button>
-                                        <label alignment="left" text="Opp" id="17450" width="1" height="0.25" textAlignment="center">
+                                        <label alignment="left" text="OPPONENT" id="17450" width="1" height="0.25" textAlignment="center" minimumScaleFactor="0">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="10"/>
                                         </label>
@@ -117,11 +136,11 @@
                                             <items>
                                                 <label alignment="left" id="12436" textAlignment="center" width="1" height="0.5">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                    <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
                                                 <label alignment="left" id="12437" textAlignment="center" width="1" height="0.5">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                    <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
                                             </items>
                                         </group>
@@ -139,11 +158,11 @@
                                             <items>
                                                 <label alignment="left" id="9953" textAlignment="center" width="1" height="0.5" verticalAlignment="bottom">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                    <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
                                                 <label alignment="left" id="9954" textAlignment="center" width="1" height="0.5" verticalAlignment="bottom">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                                    <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
                                             </items>
                                         </group>
@@ -155,13 +174,13 @@
                                         <group width="1" alignment="right" id="8704" height="1" layout="vertical">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <items>
-                                                <label alignment="left" text="oppPoints" id="8655" textAlignment="center" width="1" height="0.5">
+                                                <label alignment="left" text="oppPoints" id="8655" textAlignment="center" width="1" height="0.5" minimumScaleFactor="0">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="30" weight="medium"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="38"/>
                                                 </label>
-                                                <label alignment="left" text="youPoints" id="8670" width="1" textAlignment="center" height="0.5">
+                                                <label alignment="left" text="youPoints" id="8670" width="1" textAlignment="center" height="0.5" minimumScaleFactor="0">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="font" type="system" pointSize="30" weight="medium"/>
+                                                    <fontDescription key="font" type="boldSystem" pointSize="38"/>
                                                 </label>
                                             </items>
                                         </group>
@@ -227,12 +246,12 @@
                                 </group>
                                 <group width="1" alignment="left" id="8176" height="0.25">
                                     <items>
-                                        <label alignment="left" id="8194" width="0.35" height="1" textAlignment="center" text="Undo">
+                                        <label alignment="left" id="8194" width="0.35" height="1" textAlignment="center" text="UNDO">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="10"/>
                                             <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                         </label>
-                                        <label alignment="right" id="8177" width="0.35" height="1" textAlignment="center" text="You">
+                                        <label alignment="right" id="8177" width="0.35" height="1" textAlignment="center" text="YOU">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="10"/>
                                             <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -257,6 +276,8 @@
                         <outlet property="youSets" destination="12437" id="name-outlet-12437"/>
                         <outlet property="oppGames" destination="9953" id="name-outlet-9953"/>
                         <outlet property="youGames" destination="9954" id="name-outlet-9954"/>
+                        <outlet property="lblDoubles" destination="33129" id="name-outlet-33129"/>
+                        <outlet property="lblBestOf" destination="33130" id="name-outlet-33130"/>
                     </connections>
                 </controller>
             </objects>
@@ -266,8 +287,18 @@
             <objects>
                 <controller id="8597" title="Summary" customClass="InterfaceControllerSummary" identifier="InterfaceControllerSummary">
                     <items>
+                        <group width="35" alignment="left" id="31941" height="35" radius="15">
+                            <items>
+                                <imageView alignment="left" id="31940" width="1" height="1" image="icon.png">
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="32030">
+                            <color key="color" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                        </separator>
                         <label alignment="left" id="24417" width="1" textAlignment="left" text="TOTAL TIME" height="12">
-                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <fontDescription key="font" type="system" pointSize="10"/>
                             <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         </label>
                         <label alignment="left" text="lblDuration" id="24418" width="1" textAlignment="left" height="22">
@@ -278,36 +309,36 @@
                             <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                         </separator>
                         <label alignment="left" id="24419" width="1" height="12" textAlignment="left" text="YOU PLAYED">
-                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <fontDescription key="font" type="system" pointSize="10"/>
                             <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         </label>
                         <label alignment="left" text="lblTotalPoints" id="24420" width="1" height="22" textAlignment="left">
                             <fontDescription key="font" type="system" pointSize="22"/>
                             <color key="textColor" colorSpace="calibratedRGB" red="1" green="0.14901960784313725" blue="0" alpha="1"/>
                         </label>
-                        <separator alignment="center" id="26842" width="134" height="1.5">
+                        <separator alignment="center" id="26842" width="1" height="1.5">
                             <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                         </separator>
                         <label alignment="left" text="YOU WON" id="24843" width="1" height="12" textAlignment="left">
-                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <fontDescription key="font" type="system" pointSize="10"/>
                             <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         </label>
                         <label alignment="left" text="lblYouPoints" id="24844" width="1" height="19.5" textAlignment="left">
                             <fontDescription key="font" type="system" pointSize="22"/>
                             <color key="textColor" colorSpace="calibratedRGB" red="1" green="0.14901960784313725" blue="0" alpha="1"/>
                         </label>
-                        <separator alignment="center" id="26278" width="134" height="1.5">
+                        <separator alignment="center" id="26278" width="1" height="1.5">
                             <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                         </separator>
                         <label alignment="left" id="24815" width="1" height="12" textAlignment="left" text="OPPONENT WON">
-                            <fontDescription key="font" type="system" pointSize="12"/>
+                            <fontDescription key="font" type="system" pointSize="10"/>
                             <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         </label>
                         <label alignment="left" text="lblOppPoints" id="24816" width="1" height="19.5" textAlignment="left">
                             <fontDescription key="font" type="system" pointSize="22"/>
                             <color key="textColor" colorSpace="calibratedRGB" red="1" green="0.14901960784313725" blue="0" alpha="1"/>
                         </label>
-                        <separator alignment="center" id="26843" width="134" height="1.5">
+                        <separator alignment="center" id="26843" width="1" height="1.5">
                             <color key="color" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                         </separator>
                         <button width="1" alignment="center" title="End Match" id="24870">
@@ -350,4 +381,7 @@
             <point key="canvasLocation" x="-266" y="307"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon.png" width="172" height="172"/>
+    </resources>
 </document>

@@ -24,6 +24,8 @@ namespace MatchScore.Scores
             this.oppPoints = oppPoints;
             this.youPoints = youPoints;
             YouServe = previous.YouServe;
+            IsDoubles = previous.IsDoubles;
+            IsBestOfFive = previous.IsBestOfFive;
             if (SumOfPointsIsOdd(oppPoints, youPoints))
             {
                 YouServe = !previous.YouServe;
@@ -46,6 +48,10 @@ namespace MatchScore.Scores
 
         public bool YouWonThePoint { get; private set; }
 
+        public bool IsDoubles { get; private set; }
+
+        public bool IsBestOfFive { get; private set; }
+
         public TimeSpan ElapsedPointTime { get; private set; }
 
         public IScore SetOppPoint()
@@ -66,7 +72,7 @@ namespace MatchScore.Scores
 
         public bool IsEndOfMatch()
         {
-            return new MatchRules().IsEndOfMatch(OppSets, YouSets);
+            return new MatchRules().IsEndOfMatch(OppSets, YouSets, IsBestOfFive);
         }
 
         static bool SumOfPointsIsOdd(int oppPoints, int youPoints)

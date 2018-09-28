@@ -17,9 +17,9 @@ namespace MatchScore
         {
         }
 
-        public void Start(bool youServe)
+        public void Start(bool isDoubles, bool isBestOfFive, bool youServe)
         {
-            scores.Add(new InitialScore(youServe, stopwatch));
+            scores.Add(new InitialScore(isDoubles, isBestOfFive, youServe, stopwatch));
             stopwatch.Start();
         }
 

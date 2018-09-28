@@ -7,9 +7,9 @@ namespace MatchScore
 {
     public class MatchScoreFacade
     {
-        public void StartMatch(bool youServe)
+        public void StartMatch(bool isDoubles, bool isBestOfFive, bool youServe)
         {
-            Match.Instance.Start(youServe);
+            Match.Instance.Start(isDoubles, isBestOfFive, youServe);
         }
 
         public bool OnGoing()

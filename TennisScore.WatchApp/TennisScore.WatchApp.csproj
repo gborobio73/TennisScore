@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\floppy.png" />
+    <BundleResource Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\WatchOS\Xamarin.WatchOS.App.CSharp.targets" />
 </Project>

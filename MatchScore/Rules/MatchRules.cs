@@ -3,9 +3,12 @@ namespace MatchScore.Rules
 {
     public class MatchRules
     {
-        public bool IsEndOfMatch(int oppSets, int youSets)
+        public bool IsEndOfMatch(int oppSets, int youSets, bool isBestOfFive)
         {
-            return Math.Abs(oppSets - youSets) >= 2;
+            if (isBestOfFive)
+                return oppSets == 3 || youSets == 3;// || Math.Abs(oppSets - youSets) == 2;
+            return oppSets == 2 || youSets == 2;
+
         }
 
         internal bool IsTiebreakOver(int oppPoints, int youPoints)

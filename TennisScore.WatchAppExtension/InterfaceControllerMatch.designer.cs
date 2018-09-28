@@ -28,6 +28,14 @@ namespace TennisScore.WatchAppExtension
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel lblBestOf { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel lblDoubles { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel lblGames { get; set; }
 
         [Outlet]
@@ -93,6 +101,16 @@ namespace TennisScore.WatchAppExtension
             if (btnYouPoint != null) {
                 btnYouPoint.Dispose ();
                 btnYouPoint = null;
+            }
+
+            if (lblBestOf != null) {
+                lblBestOf.Dispose ();
+                lblBestOf = null;
+            }
+
+            if (lblDoubles != null) {
+                lblDoubles.Dispose ();
+                lblDoubles = null;
             }
 
             if (lblGames != null) {
