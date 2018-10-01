@@ -45,8 +45,6 @@ namespace MatchScore.Scores
 
         public TimeSpan ElapsedPointTime { get; private set; }
 
-        public bool IsEndOfMatch { get; protected set; }
-       
         public abstract IScore SetOppPoint();
 
         public abstract IScore SetYouPoint();
@@ -71,8 +69,6 @@ namespace MatchScore.Scores
         IScore SetOppPoint();
 
         IScore SetYouPoint();
-
-        bool IsEndOfMatch { get; }
 
         bool IsDoubles { get; }
 

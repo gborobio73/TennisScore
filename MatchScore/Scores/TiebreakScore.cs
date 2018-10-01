@@ -70,8 +70,6 @@ namespace MatchScore.Scores
             return new TiebreakScore(oppPoints, youPoints + 1, this, true, stopwatch);
         }
 
-        public bool IsEndOfMatch => false;
-
         static bool SumOfPointsIsOdd(int oppPoints, int youPoints)
         {
             return (oppPoints + youPoints) % 2 != 0;
