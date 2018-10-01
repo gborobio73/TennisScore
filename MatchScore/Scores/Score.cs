@@ -45,11 +45,8 @@ namespace MatchScore.Scores
 
         public TimeSpan ElapsedPointTime { get; private set; }
 
-        public bool IsEndOfMatch()
-        {
-            return new MatchRules().IsEndOfMatch(OppSets, YouSets, IsBestOfFive);
-        }
-
+        public bool IsEndOfMatch { get; protected set; }
+       
         public abstract IScore SetOppPoint();
 
         public abstract IScore SetYouPoint();
@@ -75,7 +72,7 @@ namespace MatchScore.Scores
 
         IScore SetYouPoint();
 
-        bool IsEndOfMatch();
+        bool IsEndOfMatch { get; }
 
         bool IsDoubles { get; }
 

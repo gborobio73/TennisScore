@@ -37,12 +37,7 @@ namespace MatchScore.Scores
 
         public bool IsBestOfFive { get; private set; }
 
-    public TimeSpan ElapsedPointTime { get; private set; }
-
-        public bool IsEndOfMatch()
-        {
-            return false;
-        }
+        public TimeSpan ElapsedPointTime { get; private set; }
 
         public IScore SetOppPoint()
         {

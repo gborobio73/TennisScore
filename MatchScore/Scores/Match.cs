@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using MatchScore.Rules;
 using MatchScore.Scores;
 
 namespace MatchScore
@@ -36,7 +37,7 @@ namespace MatchScore
         internal void SetOppPoint()
         {
             var current = Current();
-            if (current.IsEndOfMatch()) return;
+            if (new MatchRules().IsEndOfMatch(current.OppSets, current.OppGames, current.IsBestOfFive)) return;
 
             var newScore = current.SetOppPoint();
             scores.Add(newScore);
@@ -45,7 +46,7 @@ namespace MatchScore
         internal void SetYouPoint()
         {
             var current = Current();
-            if (current.IsEndOfMatch()) return;
+            if (new MatchRules().IsEndOfMatch(current.OppSets, current.OppGames, current.IsBestOfFive)) return;
 
             var newScore = current.SetYouPoint();
             scores.Add(newScore);

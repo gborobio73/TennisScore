@@ -11,7 +11,6 @@ namespace MatchScore.UI
         string OppSets { get; }
         string YouSets { get; }
         bool YouServe { get; }
-        bool IsEndOfMatch { get; }
         bool YouWonThePoint { get; }
         bool IsDoubles { get; }
         bool IsBestOfFive { get; }
@@ -28,7 +27,6 @@ namespace MatchScore.UI
             YouGames = score.YouGames.ToString();
             OppSets = score.OppSets.ToString();
             YouSets = score.YouSets.ToString();
-            IsEndOfMatch = score.IsEndOfMatch();
             YouServe = score.YouServe;
             YouWonThePoint = score.YouWonThePoint;
             IsDoubles = score.IsDoubles;
@@ -46,8 +44,6 @@ namespace MatchScore.UI
         public string OppSets { get; private set; }
 
         public string YouSets { get; private set; }
-
-        public bool IsEndOfMatch { get; private set; }
 
         public bool YouServe { get; private set; }
 

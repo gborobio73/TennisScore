@@ -8,7 +8,8 @@ namespace MatchScore.Scores
     class NewGame : Score
     {
         bool isTiebreak;
-
+        bool isTiebreakToTen;
+        
         internal NewGame(IScore previous, bool youWon, Stopwatch stopwatch)
             : base(previous, youWon, stopwatch)
         {
@@ -17,16 +18,22 @@ namespace MatchScore.Scores
 
             YouServe = !previous.YouServe;
 
-            if ( new MatchRules().IsSetOver(OppGames, YouGames) ) 
+            if (new MatchRules().IsSetOver(OppGames, YouGames))
             {
                 if (youWon) YouSets++;
                 else OppSets++;
                 YouGames = 0;
                 OppGames = 0;
+
+                if (IsDoubles && new MatchRules().IsDecidingSet(OppSets, YouSets, IsBestOfFive))
+                {
+                    isTiebreakToTen = true;
+                }
+
             }
-            else 
+            else
             {
-                if (new MatchRules().IsTiebreak(OppGames, YouGames)) 
+                if (new MatchRules().IsTiebreak(OppGames, YouGames))
                 {
                     isTiebreak = true;
                 }

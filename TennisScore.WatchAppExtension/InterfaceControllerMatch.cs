@@ -82,16 +82,7 @@ namespace TennisScore.WatchAppExtension
         void RenderScore()
         {
             var score = match.GetScore();
-            if (score.IsEndOfMatch)
-            {
-                //lblOppScore.SetTextColor(UIKit.UIColor.Green);
-                //lblYouScore.SetTextColor(UIKit.UIColor.Green);
-            }
-            else
-            {
-                //lblOppScore.SetTextColor(UIKit.UIColor.White);
-                //lblYouScore.SetTextColor(UIKit.UIColor.White);
-            }
+
             if (score.YouServe){
                 youPoints.SetTextColor(UIKit.UIColor.Green);
                 oppPoints.SetTextColor(UIKit.UIColor.White);

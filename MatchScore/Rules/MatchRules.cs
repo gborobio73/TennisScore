@@ -22,6 +22,13 @@ namespace MatchScore.Rules
                 || youGames == 7 || oppGames == 7;
         }
 
+        internal bool IsDecidingSet(int oppSets, int youSets, bool isBestOfFive)
+        {
+            if (isBestOfFive)
+                return oppSets == 2 && youSets == 2;
+            return oppSets == 1 && youSets == 1;
+        }
+
         internal bool IsTiebreak(int oppGames, int youGames)
         {
             return youGames == 6 && oppGames == 6;
