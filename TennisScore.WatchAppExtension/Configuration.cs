@@ -4,7 +4,7 @@ using WatchKit;
 
 namespace TennisScore.WatchAppExtension
 {
-    public sealed class Configuration
+    sealed class Configuration
     {
         static readonly Lazy<Configuration> lazy = new Lazy<Configuration>(() => new Configuration());
 

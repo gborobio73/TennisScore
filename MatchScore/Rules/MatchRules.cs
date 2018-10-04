@@ -13,7 +13,14 @@ namespace MatchScore.Rules
 
         internal bool IsTiebreakOver(int oppPoints, int youPoints)
         {
-            return (oppPoints >= 7 || youPoints >= 7) && Math.Abs(youPoints - oppPoints) >= 2;
+            int bestOf = 7;
+            return IsTheTiebreakOver(oppPoints, youPoints, bestOf);
+        }
+
+        internal bool IsMaxiTiebreakOver(int oppPoints, int youPoints) 
+        {
+            int bestOf = 10;
+            return IsTheTiebreakOver(oppPoints, youPoints, bestOf);
         }
 
         internal bool IsSetOver(int oppGames, int youGames)
@@ -32,6 +39,18 @@ namespace MatchScore.Rules
         internal bool IsTiebreak(int oppGames, int youGames)
         {
             return youGames == 6 && oppGames == 6;
+        }
+
+        internal bool IsMaxiTiebreak(int oppSets, int youSets, bool isBestOfFive, bool isDoubles)
+        {
+            if (!isDoubles) return false;
+            return IsDecidingSet(oppSets, youSets, isBestOfFive);
+        }
+
+        bool IsTheTiebreakOver(int oppPoints, int youPoints, int bestOf)
+        {
+            return (oppPoints >= bestOf || youPoints >= bestOf) && Math.Abs(youPoints - oppPoints) >= 2;
+
         }
     }
 }

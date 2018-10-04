@@ -7,8 +7,10 @@ namespace MatchScore.Scores
 {
     class NewGame : Score
     {
+        MatchRules matchRules = new MatchRules();
+
         bool isTiebreak;
-        bool isTiebreakToTen;
+        bool isMaxiTiebreak;
         
         internal NewGame(IScore previous, bool youWon, Stopwatch stopwatch)
             : base(previous, youWon, stopwatch)
@@ -27,7 +29,7 @@ namespace MatchScore.Scores
 
                 if (IsDoubles && new MatchRules().IsDecidingSet(OppSets, YouSets, IsBestOfFive))
                 {
-                    isTiebreakToTen = true;
+                    isMaxiTiebreak = true;
                 }
 
             }
@@ -46,6 +48,8 @@ namespace MatchScore.Scores
 
         public override IScore SetOppPoint()
         {
+            if (isMaxiTiebreak) return new MaxiTiebreakScore(1, 0, this, false, stopwatch);
+
             if (isTiebreak) return new TiebreakScore(1, 0, this, false, stopwatch);
 
             if (YouServe) return new LoveFifteen(this, false, stopwatch);
@@ -54,10 +58,32 @@ namespace MatchScore.Scores
 
         public override IScore SetYouPoint()
         {
+            if (isMaxiTiebreak) return new MaxiTiebreakScore(0, 1, this, true, stopwatch);
+
             if (isTiebreak) return new TiebreakScore(0, 1, this, true, stopwatch);
 
             if (YouServe) return new FifteenLove(this, true, stopwatch);
             return new LoveFifteen(this, true, stopwatch);
+        }
+
+        bool IsEndOfMatch()
+        {
+            return matchRules.IsEndOfMatch(OppSets, YouSets, IsBestOfFive);
+        }
+
+        bool IsMaxiTiebreak()
+        {
+            return matchRules.IsMaxiTiebreak(OppSets, YouSets, IsBestOfFive, IsDoubles);
+        }
+
+        bool IsNewSet()
+        {
+            return matchRules.IsSetOver(OppGames, YouGames);
+        }
+
+        bool IsTiebreak()
+        {
+            return matchRules.IsTiebreak(OppGames, YouGames);
         }
     }
 }

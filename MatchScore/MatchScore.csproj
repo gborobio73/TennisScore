@@ -76,6 +76,8 @@
     <Compile Include="Rules\MatchRules.cs" />
     <Compile Include="UI\IUIMatch.cs" />
     <Compile Include="Scores\Match.cs" />
+    <Compile Include="Scores\MaxiTiebreakScore.cs" />
+    <Compile Include="Scores\Score %28copy%29.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />

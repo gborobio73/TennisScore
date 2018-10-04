@@ -7,9 +7,9 @@ namespace MatchScore.Scores
 {
     class TiebreakScore : IScore
     {
-        int oppPoints;
-        int youPoints;
-        Stopwatch stopwatch;
+        protected int oppPoints;
+        protected int youPoints;
+        protected Stopwatch stopwatch;
 
         public TiebreakScore(int oppPoints, int youPoints, IScore previous, bool youWon, Stopwatch stopWatch)
         {
@@ -54,17 +54,17 @@ namespace MatchScore.Scores
 
         public TimeSpan ElapsedPointTime { get; private set; }
 
-        public IScore SetOppPoint()
+        public virtual IScore SetOppPoint()
         {
-            if (new MatchRules().IsTiebreakOver(oppPoints +1, youPoints)) 
+            if (new MatchRules().IsTiebreakOver(oppPoints + 1, youPoints)) 
                 return new NewGame(this, false, stopwatch);
 
             return new TiebreakScore(oppPoints + 1, youPoints, this, false, stopwatch);
         }
 
-        public IScore SetYouPoint()
+        public virtual IScore SetYouPoint()
         {
-            if (new MatchRules().IsTiebreakOver(oppPoints, youPoints+1)) 
+            if (new MatchRules().IsTiebreakOver(oppPoints, youPoints + 1)) 
                 return new NewGame(this, true, stopwatch);
 
             return new TiebreakScore(oppPoints, youPoints + 1, this, true, stopwatch);

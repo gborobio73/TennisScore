@@ -37,7 +37,7 @@ namespace MatchScore
         internal void SetOppPoint()
         {
             var current = Current();
-            if (new MatchRules().IsEndOfMatch(current.OppSets, current.OppGames, current.IsBestOfFive)) return;
+            if (new MatchRules().IsEndOfMatch(current.OppSets, current.YouSets, current.IsBestOfFive)) return;
 
             var newScore = current.SetOppPoint();
             scores.Add(newScore);
