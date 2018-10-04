@@ -14,13 +14,13 @@ namespace MatchScore.Scores
 
         public override Point YouPoint => Point.Thirty();
 
-        public override IScore SetOppPoint()
+        protected override IScore GiveThePointToOpponent()
         {
             if (YouServe) return new ThirtyForty(this, false, stopwatch);
             return new FourtyThirty(this, false, stopwatch);
         }
 
-        public override IScore SetYouPoint()
+        protected override IScore GiveThePointToYou()
         {
             if (YouServe) return new FourtyThirty(this, true, stopwatch);
             return new ThirtyForty(this, true, stopwatch);

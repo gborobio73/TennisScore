@@ -39,6 +39,8 @@ namespace MatchScore.Scores
 
         public TimeSpan ElapsedPointTime { get; private set; }
 
+        public bool IsEndOfMatch => false;
+
         public IScore SetOppPoint()
         {
             if (YouServe) return new LoveFifteen(this, false, stopwatch);

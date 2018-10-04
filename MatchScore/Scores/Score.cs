@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using MatchScore.Points;
-using MatchScore.Rules;
 
 namespace MatchScore.Scores
 {
-    abstract class Score : IScore
+    abstract class Score : ScoreState, IScore
     {
         protected readonly Stopwatch stopwatch;
 
@@ -41,13 +40,12 @@ namespace MatchScore.Scores
 
         public bool IsDoubles { get; private set; }
 
-        public bool IsBestOfFive { get; private set;}
+        public bool IsBestOfFive { get; private set; }
 
         public TimeSpan ElapsedPointTime { get; private set; }
 
-        public abstract IScore SetOppPoint();
+        public bool IsEndOfMatch => false;
 
-        public abstract IScore SetYouPoint();
     }
 
     interface IScore
@@ -77,5 +75,7 @@ namespace MatchScore.Scores
         bool YouWonThePoint { get; }
 
         TimeSpan ElapsedPointTime { get; }
+
+        bool IsEndOfMatch { get; }
     }
 }

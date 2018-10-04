@@ -4,17 +4,15 @@ using MatchScore.Points;
 
 namespace MatchScore.Scores
 {
-    class NewGame : IScore
+    class NewSet : IScore
     {
         readonly Stopwatch stopwatch;
 
-        public NewGame(IScore previous, bool youWon, Stopwatch stopwatch)
+        public NewSet(IScore previous, bool youWon, Stopwatch stopwatch)
         {
             this.stopwatch = stopwatch;
-            OppGames = youWon ? previous.OppGames : previous.OppGames + 1;
-            YouGames = youWon ? previous.YouGames + 1 : previous.YouGames;
-            OppSets = previous.OppSets;
-            YouSets = previous.YouSets;
+            OppSets = youWon ? previous.OppSets : previous.OppSets + 1;
+            YouSets = youWon ? previous.YouSets + 1 : previous.YouSets;
             YouServe = !previous.YouServe;
             IsDoubles = previous.IsDoubles;
             IsBestOfFive = previous.IsBestOfFive;
@@ -22,9 +20,9 @@ namespace MatchScore.Scores
             ElapsedPointTime = stopwatch.Elapsed;
         }
 
-        public int OppGames { get; private set; }
+        public int OppGames => 0;
 
-        public int YouGames { get; private set; }
+        public int YouGames => 0;
 
         public int OppSets { get; private set; }
 

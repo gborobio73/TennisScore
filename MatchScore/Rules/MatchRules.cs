@@ -1,4 +1,6 @@
 ﻿using System;
+using MatchScore.Scores;
+
 namespace MatchScore.Rules
 {
     public class MatchRules
@@ -23,6 +25,20 @@ namespace MatchScore.Rules
             return IsTheTiebreakOver(oppPoints, youPoints, bestOf);
         }
 
+        internal bool IsEndOfMatch(IScore current, bool youWonTheGame)
+        {
+            var oppGames = youWonTheGame ? current.OppGames : current.OppGames + 1;
+            var youGames = youWonTheGame ? current.YouGames + 1 : current.YouGames;
+
+            if(IsSetOver(oppGames, youGames)){
+                var oppSets = youWonTheGame ? current.OppSets : current.OppSets + 1;
+                var youSets = youWonTheGame ? current.YouSets + 1 : current.YouSets;
+
+                return IsEndOfMatch(oppSets, youSets, current.IsBestOfFive);
+            }
+            return false;
+         }
+
         internal bool IsSetOver(int oppGames, int youGames)
         {
             return ((youGames == 6 || oppGames == 6) && Math.Abs(youGames - oppGames) >= 2)
@@ -45,6 +61,17 @@ namespace MatchScore.Rules
         {
             if (!isDoubles) return false;
             return IsDecidingSet(oppSets, youSets, isBestOfFive);
+        }
+
+        internal bool IsTiebreakServeChange(int oppPoints, int youPoints)
+        {
+            if (ItIsTheBeginingOfTiebreak(oppPoints, youPoints)) return true;
+            return (oppPoints + youPoints) % 2 != 0;
+        }
+
+        private static bool ItIsTheBeginingOfTiebreak(int oppPoints, int youPoints)
+        {
+            return oppPoints == youPoints && oppPoints == 0;
         }
 
         bool IsTheTiebreakOver(int oppPoints, int youPoints, int bestOf)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MatchScore.Scores;
 using MatchScore.UI;
 
 namespace MatchScore
@@ -39,7 +40,7 @@ namespace MatchScore
 
         public IUIScore GetScore()
         {
-            return new UIScore(Match.Instance.Current());
+            return BuildUIScore(Match.Instance.Current());
         }
 
         public string ElapsedTime()
@@ -49,9 +50,17 @@ namespace MatchScore
 
         public IUIMatch GetMatch()
         {
-            var scores = Match.Instance.Scores().Select((s) => (IUIScore) new UIScore(s)).ToList();
+            var scores = Match.Instance.Scores().Select(BuildUIScore).ToList();
             if (scores.Any()) scores.RemoveAt(0);
             return new UIMatch(Match.Instance.ElapsedTime(), scores);
+        }
+
+        IUIScore BuildUIScore(IScore score)
+        {
+            var isTiebreak = score.GetType().Equals(typeof(TiebreakScore));
+            var isMaxiTiebreak = score.GetType().Equals(typeof(MaxiTiebreakScore));
+            var endOfMatch = score.GetType().Equals(typeof(EndOfMatch));
+            return new UIScore(score, isTiebreak, isMaxiTiebreak, endOfMatch);
         }
     }
 }

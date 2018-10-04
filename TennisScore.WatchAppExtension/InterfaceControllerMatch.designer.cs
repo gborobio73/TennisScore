@@ -16,11 +16,19 @@ namespace TennisScore.WatchAppExtension
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceGroup btnOppGroup { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceButton btnOppPoint { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceButton btnUndoPoint { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceGroup btnYouGroup { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -33,6 +41,10 @@ namespace TennisScore.WatchAppExtension
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         WatchKit.WKInterfaceLabel lblDoubles { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        WatchKit.WKInterfaceLabel lblExtra { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -88,6 +100,11 @@ namespace TennisScore.WatchAppExtension
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnOppGroup != null) {
+                btnOppGroup.Dispose ();
+                btnOppGroup = null;
+            }
+
             if (btnOppPoint != null) {
                 btnOppPoint.Dispose ();
                 btnOppPoint = null;
@@ -96,6 +113,11 @@ namespace TennisScore.WatchAppExtension
             if (btnUndoPoint != null) {
                 btnUndoPoint.Dispose ();
                 btnUndoPoint = null;
+            }
+
+            if (btnYouGroup != null) {
+                btnYouGroup.Dispose ();
+                btnYouGroup = null;
             }
 
             if (btnYouPoint != null) {
@@ -111,6 +133,11 @@ namespace TennisScore.WatchAppExtension
             if (lblDoubles != null) {
                 lblDoubles.Dispose ();
                 lblDoubles = null;
+            }
+
+            if (lblExtra != null) {
+                lblExtra.Dispose ();
+                lblExtra = null;
             }
 
             if (lblGames != null) {

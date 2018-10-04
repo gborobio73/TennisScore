@@ -14,15 +14,15 @@ namespace MatchScore.Scores
 
         public override Point YouPoint => YouServe ? Point.Fourty() : Point.Thirty();
 
-        public override IScore SetOppPoint()
+        protected override IScore GiveThePointToOpponent()
         {
             if (YouServe) return new FourtyAll(this, false, stopwatch);
-            return new NewGame(this, false, stopwatch);
+            return new EndOfAGameUtil().GetNextScore(this, false, stopwatch);
         }
 
-        public override IScore SetYouPoint()
+        protected override IScore GiveThePointToYou()
         {
-            if (YouServe) return new NewGame(this, true, stopwatch);
+            if (YouServe) return new EndOfAGameUtil().GetNextScore(this, true, stopwatch);
             return new FourtyAll(this, true, stopwatch);
         }
     }

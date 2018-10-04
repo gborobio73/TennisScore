@@ -14,16 +14,16 @@ namespace MatchScore.Scores
         public override Point OppPoint => YouServe ? Point.Fourty() : Point.Fifteen();
         public override Point YouPoint => YouServe ? Point.Fifteen() : Point.Fourty();
 
-        public override IScore SetOppPoint()
+        protected override IScore GiveThePointToOpponent()
         {
-            if (YouServe) return new NewGame(this, false, stopwatch);
+            if (YouServe) return new EndOfAGameUtil().GetNextScore(this, false, stopwatch);
             return new ThirtyForty(this, false, stopwatch);
         }
 
-        public override IScore SetYouPoint()
+        protected override IScore GiveThePointToYou()
         {
             if (YouServe) return new ThirtyForty(this, true, stopwatch);
-            return new NewGame(this, true, stopwatch);
+            return new EndOfAGameUtil().GetNextScore(this, true, stopwatch);
         }
     }
 }

@@ -1,16 +1,18 @@
 using Foundation;
 using MatchScore;
 using System;
+using System.Drawing;
 using System.Timers;
 using WatchKit;
+using UIKit;
 
 namespace TennisScore.WatchAppExtension
 {
+    // btn color #fff8c000
     public partial class InterfaceControllerMatch : WKInterfaceController
     {
         MatchScoreFacade match = new MatchScoreFacade();
         Timer matchTimer;
-
         public InterfaceControllerMatch(IntPtr handle) : base(handle)
         {
         }
@@ -82,16 +84,44 @@ namespace TennisScore.WatchAppExtension
         void RenderScore()
         {
             var score = match.GetScore();
+            lblExtra.SetText("");
+
+            if (score.EndOfMatch)
+            {
+                lblExtra.SetText("FINITO");
+                btnOppPoint.SetEnabled(false);
+                btnOppGroup.SetBackgroundColor(UIColor.DarkGray);
+                btnYouPoint.SetEnabled(false);
+                btnYouGroup.SetBackgroundColor(UIColor.DarkGray);
+
+            }
+            else
+            {
+                btnOppPoint.SetEnabled(true);
+                btnOppGroup.SetBackgroundColor(new UIColor(red: 0.97f, green: 0.75f, blue: 0.00f, alpha: 1.0f));
+                btnYouPoint.SetEnabled(true);
+                btnYouGroup.SetBackgroundColor(new UIColor(red: 0.97f, green: 0.75f, blue: 0.00f, alpha: 1.0f));
+            }
 
             if (score.YouServe){
-                youPoints.SetTextColor(UIKit.UIColor.Green);
-                oppPoints.SetTextColor(UIKit.UIColor.White);
+                youPoints.SetTextColor(UIColor.Green);
+                oppPoints.SetTextColor(UIColor.White);
 
             }
             else 
             {
-                youPoints.SetTextColor(UIKit.UIColor.White);
-                oppPoints.SetTextColor(UIKit.UIColor.Green);
+                youPoints.SetTextColor(UIColor.White);
+                oppPoints.SetTextColor(UIColor.Green);
+            }
+
+            if (score.IsTiebreak)
+            {
+                lblExtra.SetText("Tiebreak");
+            }
+
+            if (score.IsMaxiTiebreak)
+            {
+                lblExtra.SetText("10p Tiebr.");
             }
 
             oppPoints.SetText(score.OppPoint);
@@ -100,9 +130,7 @@ namespace TennisScore.WatchAppExtension
             youGames.SetText(score.YouGames);
             oppSets.SetText(score.OppSets);
             youSets.SetText(score.YouSets);
-            //lblOppScore.SetText($"{score.OppPoint} {score.OppGames} {score.OppSets} {oppServe}");
-            //lblYouScore.SetText($"{score.YouPoint} {score.YouGames} {score.YouSets} {youServe}");
-            //RenderMatchTime();
+
         }
 
         void OnTimedEvent(Object source, ElapsedEventArgs e)

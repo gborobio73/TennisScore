@@ -14,13 +14,13 @@ namespace MatchScore.Scores
 
         public override Point YouPoint => YouServe ? Point.Love() : Point.Thirty();
 
-        public override IScore SetOppPoint()
+        protected override IScore GiveThePointToOpponent()
         {
             if (YouServe) return new LoveForty(this, false, stopwatch);
             return new FifteenThirty(this, false, stopwatch);
         }
 
-        public override IScore SetYouPoint()
+        protected override IScore GiveThePointToYou()
         {
             if (YouServe) return new FifteenThirty(this, true, stopwatch);
             return new LoveForty(this, true, stopwatch);

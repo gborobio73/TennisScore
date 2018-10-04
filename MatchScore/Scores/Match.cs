@@ -37,7 +37,8 @@ namespace MatchScore
         internal void SetOppPoint()
         {
             var current = Current();
-            if (new MatchRules().IsEndOfMatch(current.OppSets, current.YouSets, current.IsBestOfFive)) return;
+            if (current.IsEndOfMatch)
+                return;
 
             var newScore = current.SetOppPoint();
             scores.Add(newScore);
@@ -46,7 +47,8 @@ namespace MatchScore
         internal void SetYouPoint()
         {
             var current = Current();
-            if (new MatchRules().IsEndOfMatch(current.OppSets, current.OppGames, current.IsBestOfFive)) return;
+            if (current.IsEndOfMatch) 
+                return;
 
             var newScore = current.SetYouPoint();
             scores.Add(newScore);
@@ -60,6 +62,7 @@ namespace MatchScore
         internal void UndoLastPoint()
         {
             if(scores.Count > 1) scores.RemoveAt(scores.Count-1);
+            stopwatch.Start();
         }
 
         internal TimeSpan ElapsedTime()

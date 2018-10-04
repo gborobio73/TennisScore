@@ -5,7 +5,7 @@ using MatchScore.Rules;
 
 namespace MatchScore.Scores
 {
-    class TiebreakScore : IScore
+    class TiebreakScore : ScoreState, IScore
     {
         protected int oppPoints;
         protected int youPoints;
@@ -13,9 +13,6 @@ namespace MatchScore.Scores
 
         public TiebreakScore(int oppPoints, int youPoints, IScore previous, bool youWon, Stopwatch stopWatch)
         {
-
-            OppGames = previous.OppGames;
-            YouGames = previous.YouGames;
             OppSets = previous.OppSets;
             YouSets = previous.YouSets;
             YouWonThePoint = youWon;
@@ -23,18 +20,14 @@ namespace MatchScore.Scores
             this.stopwatch = stopWatch;
             this.oppPoints = oppPoints;
             this.youPoints = youPoints;
-            YouServe = previous.YouServe;
+            YouServe = new MatchRules().IsTiebreakServeChange(oppPoints, youPoints)? !previous.YouServe : previous.YouServe;
             IsDoubles = previous.IsDoubles;
             IsBestOfFive = previous.IsBestOfFive;
-            if (SumOfPointsIsOdd(oppPoints, youPoints))
-            {
-                YouServe = !previous.YouServe;
-            }
         }
 
-        public int OppGames { get; private set; }
+        public virtual int OppGames => 6;
 
-        public int YouGames { get; private set; }
+        public virtual int YouGames => 6;
 
         public int OppSets { get; private set; }
 
@@ -54,25 +47,22 @@ namespace MatchScore.Scores
 
         public TimeSpan ElapsedPointTime { get; private set; }
 
-        public virtual IScore SetOppPoint()
+        public bool IsEndOfMatch => false;
+
+        protected override IScore GiveThePointToOpponent()
         {
-            if (new MatchRules().IsTiebreakOver(oppPoints + 1, youPoints)) 
-                return new NewGame(this, false, stopwatch);
+            if (new MatchRules().IsTiebreakOver(oppPoints + 1, youPoints))
+                return new EndOfAGameUtil().GetNextScore(this, false, stopwatch);
 
             return new TiebreakScore(oppPoints + 1, youPoints, this, false, stopwatch);
         }
 
-        public virtual IScore SetYouPoint()
+        protected override IScore GiveThePointToYou()
         {
-            if (new MatchRules().IsTiebreakOver(oppPoints, youPoints + 1)) 
-                return new NewGame(this, true, stopwatch);
+            if(new MatchRules().IsTiebreakOver(oppPoints, youPoints + 1))
+                return new EndOfAGameUtil().GetNextScore(this, true, stopwatch);
 
             return new TiebreakScore(oppPoints, youPoints + 1, this, true, stopwatch);
-        }
-
-        static bool SumOfPointsIsOdd(int oppPoints, int youPoints)
-        {
-            return (oppPoints + youPoints) % 2 != 0;
         }
     }
 }

@@ -14,17 +14,15 @@ namespace MatchScore.Scores
 
         public override Point YouPoint => Point.Fourty();
 
-        public override IScore SetOppPoint()
+        protected override IScore GiveThePointToOpponent()
         {
-            if (IsDoubles)
-                return new NewGame(this, false, stopwatch);
+            if (IsDoubles) return new EndOfAGameUtil().GetNextScore(this, false, stopwatch);
             return new OpponentAdvantage(this, false, stopwatch);
         }
 
-        public override IScore SetYouPoint()
+        protected override IScore GiveThePointToYou()
         {
-            if (IsDoubles)
-                return new NewGame(this, true, stopwatch);
+            if (IsDoubles) return new EndOfAGameUtil().GetNextScore(this, true, stopwatch);
             return new YourAdvantage(this, true, stopwatch);
         }
     }

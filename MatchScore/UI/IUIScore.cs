@@ -14,15 +14,17 @@ namespace MatchScore.UI
         bool YouWonThePoint { get; }
         bool IsDoubles { get; }
         bool IsBestOfFive { get; }
-
+        bool IsTiebreak { get; }
+        bool IsMaxiTiebreak { get; }
+        bool EndOfMatch { get; }
     }
 
     public class UIScore : IUIScore
     {
-        internal UIScore(IScore score)
+        internal UIScore(IScore score, bool isTiebreak, bool isMaxiTiebreak, bool endOfMatch)
         {
-            OppPoint = score.OppPoint.Equals(50) ? "Ad" : score.OppPoint.ToString();
-            YouPoint = score.YouPoint.Equals(50) ? "Ad" : score.YouPoint.ToString();
+            OppPoint = score.OppPoint.ToString();
+            YouPoint = score.YouPoint.ToString();
             OppGames = score.OppGames.ToString();
             YouGames = score.YouGames.ToString();
             OppSets = score.OppSets.ToString();
@@ -31,6 +33,9 @@ namespace MatchScore.UI
             YouWonThePoint = score.YouWonThePoint;
             IsDoubles = score.IsDoubles;
             IsBestOfFive = score.IsBestOfFive;
+            IsTiebreak = isTiebreak;
+            IsMaxiTiebreak = isMaxiTiebreak;
+            EndOfMatch = endOfMatch;
         }
 
         public string OppPoint { get; private set; }
@@ -52,5 +57,11 @@ namespace MatchScore.UI
         public bool IsDoubles { get; private set; }
 
         public bool IsBestOfFive { get; private set; }
+
+        public bool IsTiebreak { get; private set; }
+
+        public bool IsMaxiTiebreak { get; private set; }
+
+        public bool EndOfMatch { get; private set; }
     }
 }

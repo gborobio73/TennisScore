@@ -85,6 +85,10 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="font" type="system" pointSize="10"/>
                                         </label>
+                                        <label alignment="left" text="Label" id="34032" numberOfLines="2" minimumScaleFactor="0" width="1">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                        </label>
                                     </items>
                                 </group>
                                 <group width="0.35" alignment="left" id="17360" height="1" layout="vertical">
@@ -102,7 +106,7 @@
                                                 <items>
                                                     <group width="1" alignment="left" id="7130" height="1" radius="12">
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.97647058823529409" green="0.73725490196078436" blue="0" alpha="1"/>
+                                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.97254901960784312" green="0.75294117647058822" blue="0" alpha="1"/>
                                                         <items>
                                                             <label alignment="left" text="↑" id="7131" width="1" height="1" textAlignment="center">
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,7 +234,7 @@
                                                 <items>
                                                     <group width="1" alignment="center" id="7309" height="1" verticalAlignment="center" radius="12">
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.97647058823529409" green="0.73725490196078436" blue="0" alpha="1"/>
+                                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.97254901960784312" green="0.75294117647058822" blue="0" alpha="1"/>
                                                         <items>
                                                             <label alignment="left" text="↓" id="7310" textAlignment="center" width="1" height="1">
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -278,6 +282,9 @@
                         <outlet property="youGames" destination="9954" id="name-outlet-9954"/>
                         <outlet property="lblDoubles" destination="33129" id="name-outlet-33129"/>
                         <outlet property="lblBestOf" destination="33130" id="name-outlet-33130"/>
+                        <outlet property="lblExtra" destination="34032" id="name-outlet-34032"/>
+                        <outlet property="btnOppGroup" destination="7130" id="name-outlet-7130"/>
+                        <outlet property="btnYouGroup" destination="7309" id="name-outlet-7309"/>
                     </connections>
                 </controller>
             </objects>
